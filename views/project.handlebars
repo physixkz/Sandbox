@@ -1,0 +1,32 @@
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{{get_emoji}}}</p>
+  <p>{{dish}}</p>
+  <p>Ingredients: {{ingredients}}</p>
+  <p>Instructions: {{instructions}}</p>
+  <p>
+    <img src="{{picture_link}}" alt="Recipe Image" style="width:300px; height 300px;">
+  </p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+    <span for="img" aria-label="money">⏳</span>
+    <span class="dollar-amount">{{format_amount cooking_time}}</span>
+    needed
+  </p>
+
+  {{#if logged_in}}
+  <p>
+    <button class="btn btn-primary" id="rateRecipeButton">Rate this recipe!</button>
+  </p>
+
+  <!-- Hidden form field initially hidden, make into a script when you can -->
+  <p id="ratingForm" style="display: none;">
+    <label for="project-rating">Rate this recipe:</label>
+    <input type="number" id="rating" name="rating" step="0.1" min="0" max="5" value="0">
+    <button id="submitRating" class="btn btn-primary">Submit</button>
+  </p>
+</div>
+<script src="/js/rating.js"></script>
+{{else}}
+<a href="/login">You must login first to rate this recipe!</a>
+{{/if}}

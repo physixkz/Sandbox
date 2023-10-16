@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Edit Project</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Edit Dish:</h3>
+
+    <form class="form edit-project-form">
+      <div class="form-group">
+        <label for="project-name">Dish Name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" value="{{project.dish}}" />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">Cooking Time (minutes):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" value="{{project.cooking_time}}" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">Ingredients:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc">{{project.ingredients}}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="project-inst">Instructions:</label>
+        <textarea class="form-input" id="project-inst" name="project-inst">{{project.instructions}}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="project-inst">Picture Link:</label>
+        <textarea class="form-input" id="project-pict" name="project-pict">{{project.picture_link}}</textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="./js/edit-project.js"></script>
